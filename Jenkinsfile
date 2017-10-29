@@ -33,8 +33,8 @@ pipeline {
 					sh 'git pull origin development'
 					echo "checking out master"
 					sh 'git checkout master'
-					sh 'git config --global user.email "sv00360113@techmahindra.com"
-                                        sh 'git config --global user.name "sv00360113"
+					sh 'git config --global user.email sv00360113@techmahindra.com'
+                                        sh 'git config --global user.name sv00360113'
 					sh 'git merge development'
 					sh 'git push origin master'
 					}
