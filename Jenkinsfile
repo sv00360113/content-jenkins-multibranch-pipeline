@@ -16,7 +16,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleC
 }
 		stage ('build') {
 			steps {
-			withEnv( ["ANT_HOME=${tool antVersion}"] ) {
+withAnt(["ANT_HOME=${tool antVersion}"] ) {
     sh '$ANT_HOME/bin/ant war'
 }
 }
