@@ -1,8 +1,8 @@
 pipeline {
   agent any
-#		environment {
-#		 ANT_HOME = /usr/share/ant
-#}
+//		environment {
+//		 ANT_HOME = /usr/share/ant
+//}
      stages {
 stage (checkout) {
     steps { 
@@ -11,15 +11,15 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleC
 
 
 }
-#		stage ('build') {
-$				steps {
-#withAnt {
-#    // some block
-#       		bat "${ANT_HOME}\\bin\\ant -f build.xml"
-#       		step([$class: 'ArtifactArchiver', artifacts: 'Test.html', fingerprint: true])
+//		stage ('build') {
+//				steps {
+//withAnt {
+    // some block
+//       		bat "${ANT_HOME}\\bin\\ant -f build.xml"
+//       		step([$class: 'ArtifactArchiver', artifacts: 'Test.html', fingerprint: true])
 
-#}
-#}
-#}
+//}
+//}
+//}
 }
 }
