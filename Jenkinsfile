@@ -19,8 +19,8 @@ withAnt {
 			sh "ant -f build.xml"
 //       		step([$class: 'ArtifactArchiver', artifacts: 'Test.html', fingerprint: true])
 
-//}
-//}
-//}
+}
+}
+}
 }
 }
