@@ -1,5 +1,6 @@
 pipeline {
   agent any
+       def antHome = tool 'ant'
      stages {
 stage (checkout) {
     steps { 
@@ -12,7 +13,6 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleC
 				steps {
 withAnt {
     // some block
-		def antHome = tool 'ant'
        		bat "${antHome}\\bin\\ant -f build.xml"
        		step([$class: 'ArtifactArchiver', artifacts: 'Test.html', fingerprint: true])
 
