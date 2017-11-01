@@ -1,10 +1,5 @@
 pipeline {
   agent any
-       environment {
-              antVersion = 'Ant1.9.4'
-                  }
-withEnv( ["ANT_HOME=${tool antVersion}"] ) {
-    sh '$ANT_HOME/bin/ant target1 target2'
 }
      stages {
 stage (checkout) {
@@ -16,8 +11,10 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleC
 }
 		stage ('build') {
 			steps {
-withAnt(["ANT_HOME=${tool antVersion}"] ) {
-    sh '$ANT_HOME/bin/ant war'
+					 env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
+                                         sh 'ant build'
+
+
 }
 }
 }
