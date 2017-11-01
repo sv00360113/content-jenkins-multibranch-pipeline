@@ -8,13 +8,11 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleC
 
 
 }
-		stage ('build') {
-			steps {
-					 env.PATH = "${tool 'Ant'}/bin:${env.PATH}"
-                                         sh 'ant build'
+		stage ('build') 
+		def antHome = tool 'ant'
+       		bat "${antHome}\\bin\\ant -f build.xml"
+       		step([$class: 'ArtifactArchiver', artifacts: 'Test.html', fingerprint: true])
 
+}
+}
 
-}
-}
-}
-}
