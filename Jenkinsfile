@@ -26,7 +26,7 @@ withAnt {
 }
 		stage ("deploy")  {
 			steps {
-  				sh 'cp -r dist/${BUILD_VERSION}/jke.war /opt/tomcat/webapps/'
+  				sh 'cp -r /var/jenkins_home/workspace/test3_master-34NCSIC7R6WDQGWM3TPLASTIQ2VSVZL7ZZCVHNDTIM3GG26T7DMA/dist/${BUILD_VERSION}/jke.war /opt/tomcat/webapps/'
 }
 }
 }
