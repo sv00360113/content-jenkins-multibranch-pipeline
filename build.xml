@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <project name="jke" default="war">
-<property name="JKE_VERSION" value="${BUILD_VERSION}"/>
+<property name="JKE_VERSION" value="${BUILD_VERSION}.${BUILD_NUMBER}"/>
 <path id="compile.classpath">
 
 <fileset dir="WebContent/WEB-INF/lib">
@@ -13,7 +13,7 @@
 
 <mkdir dir="build/classes"/>
 
-<mkdir dir="dist/${BUILD_VERSION}" />
+<mkdir dir="dist/${BUILD_VERSION}.${BUILD_NUMBER}" />
 </target>
 
 <target name="compile" depends="init" >
@@ -24,7 +24,7 @@
 
 <target name="war" depends="compile">
 
-<war destfile="dist/${BUILD_VERSION}/jke.war" webxml="WebContent/WEB-INF/web.xml">
+<war destfile="dist/${BUILD_VERSION}.${BUILD_NUMBER}/jke.war" webxml="WebContent/WEB-INF/web.xml">
 <fileset dir="WebContent"/>
 <lib dir="WebContent/WEB-INF/lib"/>
 <classes dir="build/classes"/>
