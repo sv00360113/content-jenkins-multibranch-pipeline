@@ -1,7 +1,7 @@
 pipeline {
   agent any
 		environment {
-		 antHome = tool 'ant'
+		 antHome = tool 'Ant'
 }
      stages {
 stage (checkout) {
