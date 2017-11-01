@@ -1,7 +1,7 @@
 pipeline {
   agent any
 		environment {
-       def antHome = tool 'ant'
+		 antHome = tool 'ant'
 }
      stages {
 stage (checkout) {
