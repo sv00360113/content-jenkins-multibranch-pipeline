@@ -2,7 +2,6 @@ pipeline {
   agent any
 		environment {
 //		 ANT_HOME = /usr/share/ant
-		BUILD_VERSION = 1
 }
      stages {
 stage (checkout) {
