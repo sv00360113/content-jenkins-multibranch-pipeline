@@ -15,7 +15,7 @@ checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleC
 				steps {
 withAnt {
     // some block
-       		bat "${ANT_HOME\\bin\\ant -f build.xml"
+       		bat "${ANT_HOME}\\bin\\ant -f build.xml"
        		step([$class: 'ArtifactArchiver', artifacts: 'Test.html', fingerprint: true])
 
 }
