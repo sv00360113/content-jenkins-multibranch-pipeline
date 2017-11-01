@@ -17,9 +17,15 @@ withAnt {
     // some block
 //       		bat "${ANT_HOME}\\bin\\ant -f build.xml"
 			sh "ant -f build.xml"
-//       		step([$class: 'ArtifactArchiver', artifacts: 'Test.html', fingerprint: true])
+         		step([$class: 'ArtifactArchiver', artifacts: 'Test.html', fingerprint: true])
+
 
 }
+}
+}
+		stage ("deploy")  {
+			steps {
+  				powershell 'cp -r dist/\\$\\{BUILD_VERSION\\}/jke.war /opt/tomcat/webapps/'
 }
 }
 }
