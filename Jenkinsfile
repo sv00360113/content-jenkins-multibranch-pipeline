@@ -1,8 +1,10 @@
 pipeline {
   agent any
-//		environment {
+		environment {
 //		 ANT_HOME = /usr/share/ant
-//}
+		MAJOR_VERSION = 1
+ 		
+}
      stages {
 stage (checkout) {
     steps { 
@@ -25,7 +27,7 @@ withAnt {
 }
 		stage ("deploy")  {
 			steps {
-				sh 'cp -r dist/${BUILD_VERSION}/jke.war /opt/tomcat/webapps/'
+				sh 'cp -r dist/${env.BUILD_NUMBER}/jke.war /opt/tomcat/webapps/'
 }
 }
 }
