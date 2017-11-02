@@ -2,7 +2,7 @@ pipeline {
   agent any
 		environment {
 //		 ANT_HOME = /usr/share/ant
-		MAJOR_VERSION = 1
+		BUILD_VERSION = 1
  		
 }
      stages {
