@@ -27,7 +27,7 @@ withAnt {
 }
 		stage ("deploy")  {
 			steps {
-				sh 'cp -r dist/ /tmp/'
+				sh 'cp -r dist/jke.war /tmp/'
 }
 }
 }
