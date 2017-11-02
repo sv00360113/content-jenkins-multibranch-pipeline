@@ -1,8 +1,8 @@
 pipeline {
   agent any
-		environment {
+//		environment {
 //		 ANT_HOME = /usr/share/ant
-}
+//}
      stages {
 stage (checkout) {
     steps { 
