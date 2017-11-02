@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <project name="jke" default="war">
-//<property name="JKE_VERSION" value="${BUILD_VERSION}"/>
+<!--<property name="JKE_VERSION" value="${BUILD_VERSION}"/> -->
 <path id="compile.classpath">
 
 <fileset dir="WebContent/WEB-INF/lib">
@@ -13,7 +13,7 @@
 
 <mkdir dir="build/classes"/>
 
-<mkdir dir="dist" />
+<mkdir dir="dist"/>
 </target>
 
 <target name="compile" depends="init" >
